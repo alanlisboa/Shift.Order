@@ -12,21 +12,21 @@ Aplicação para criação de ordens de serviços de laboratórios clínicos esc
 - ASP.NET Core 3.1 (com .NET Core 3.1)
 - ASP.NET MVC Core 
 - ASP.NET WebApi Core 
-- Entity Framework Core 3.1
 - .NET Core Native DI
-- AutoMapper
+- Entity Framework Core 3.1
 - FluentValidator
 - MediatR
-- Swagger UI with JWT support
+- AutoMapper
+- Swagger UI
 
 ## Arquiteturas empregadas:
 
 - Arquitetura completa com conceitos de separação por responsabilidade, SOLID e Clean Code
 - Domain Driven Design (Layers e Domain Model Pattern)
-- Domain Events
 - Domain Notification
+- Domain Events
 - Domain Validations
+- Repository
 - CQRS (Imediate Consistency)
 - Event Sourcing
 - Unit of Work
-- Repository
