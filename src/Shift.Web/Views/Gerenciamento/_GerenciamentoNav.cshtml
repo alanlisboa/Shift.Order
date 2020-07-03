@@ -1,0 +1,9 @@
+﻿@using Shift.Web.Views.Gerenciamento;
+
+<ul class="nav nav-pills flex-column">
+    <li class="nav-item"><a class="nav-link @Gerenciamento.ConvenioNavClass(ViewContext)" id="convenio" asp-action="convenio">Convenios</a></li>
+    <li class="nav-item"><a class="nav-link @Gerenciamento.ExameNavClass(ViewContext)" id="exame" asp-action="exame">Exames</a></li>
+    <li class="nav-item"><a class="nav-link @Gerenciamento.MedicoNavClass(ViewContext)" id="medico" asp-action="medico">Médicos</a></li>
+    <li class="nav-item"><a class="nav-link @Gerenciamento.PacienteNavClass(ViewContext)" id="paciente" asp-action="paciente">Pacientes</a></li>
+    <li class="nav-item"><a class="nav-link @Gerenciamento.PostoNavClass(ViewContext)" id="posto" asp-action="posto">Postos de Coleta</a></li>
+</ul>

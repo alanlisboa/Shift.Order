@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Shift.Application.ViewModels.OrdemServicoViewModel>
+
+@{
+    ViewData["Title"] = "Ordens de serviços";
+}
+
+<h1>Ordem de Serviços</h1>
+
+<p class="float-right">
+    <a asp-action="Create" class="btn btn-primary">Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Numero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataOrdem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Paciente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Convenio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostoColeta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medico)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn">
+                        @Html.DisplayFor(modelItem => item.Numero)
+                    </a>
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn">
+                        @Html.DisplayFor(modelItem => item.DataOrdem)
+                    </a>
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn">
+                        @Html.DisplayFor(modelItem => item.Paciente.Nome)
+                    </a>
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn">
+                        @Html.DisplayFor(modelItem => item.Convenio.Nome)
+                    </a>
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn">
+                        @Html.DisplayFor(modelItem => item.PostoColeta.Descricao)
+                    </a>
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn">
+                        @Html.DisplayFor(modelItem => item.Medico.Nome)
+                    </a>
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn"><i class="lnr lnr-pencil"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn"><i class="lnr lnr-trash"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,74 @@
+﻿@model Shift.Application.ViewModels.OrdemServicoViewModel
+
+@{
+    ViewData["Title"] = "Nova Ordem de Serviços";
+    ViewData["Data"] = DateTime.Now;
+}
+
+<h1>Ordem de Serviços</h1>
+
+<hr />
+
+<form asp-action="Create">
+    <div class="row">
+        <div class="col-md-8">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="Numero" class="control-label"></label>
+                <input asp-for="Numero" class="form-control" value="@ViewData["Numero"]" readonly="readonly" />
+                <span asp-validation-for="Numero" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="DataOrdem" class="control-label"></label>
+                <input asp-for="DataOrdem" class="form-control" value="@ViewData["Data"]" />
+                <span asp-validation-for="DataOrdem" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="Paciente" class="control-label"></label>
+                <select asp-for="Paciente.Id" class="form-control" asp-items="ViewBag.PacienteId"></select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="Convenio" class="control-label"></label>
+                <select asp-for="Convenio.Id" class="form-control" asp-items="ViewBag.ConvenioId"></select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="PostoColeta" class="control-label"></label>
+                <select asp-for="PostoColeta.Id" class="form-control" asp-items="ViewBag.PostoColetaId"></select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="Medico" class="control-label"></label>
+                <select asp-for="Medico.Id" class="form-control" asp-items="ViewBag.MedicoId"></select>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-8">
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-light ml-2">Voltar</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

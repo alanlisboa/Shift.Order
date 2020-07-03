@@ -1,0 +1,31 @@
+﻿@using Shift.Web.Views.Gerenciamento;
+@model IEnumerable<Shift.Application.ViewModels.ConvenioViewModel>
+
+@{
+    Layout = "_GerenciamentoLayout";
+    ViewData["Title"] = "Convênios";
+    ViewData["ActivePage"] = Gerenciamento.Convenio;
+}
+
+<h4>@ViewData["Title"]</h4>
+
+<table class="table mt-5">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,36 @@
+﻿@using Shift.Web.Views.Gerenciamento;
+@model IEnumerable<Shift.Application.ViewModels.MedicoViewModel>
+
+@{
+    Layout = "_GerenciamentoLayout";
+    ViewData["Title"] = "Médicos";
+    ViewData["ActivePage"] = Gerenciamento.Medico;
+}
+
+<h4>@ViewData["Title"]</h4>
+
+<table class="table mt-5">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Especialidade)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Especialidade.Nome)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

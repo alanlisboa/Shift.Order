@@ -1,0 +1,30 @@
+﻿@using Shift.Web.Views.Gerenciamento;
+@model IEnumerable<Shift.Application.ViewModels.PostoColetaViewModel>
+
+@{
+    Layout = "_GerenciamentoLayout";
+    ViewData["Title"] = "Postos de Coleta";
+    ViewData["ActivePage"] = Gerenciamento.Posto;
+}
+
+<h4>@ViewData["Title"]</h4>
+
+<table class="table mt-5">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

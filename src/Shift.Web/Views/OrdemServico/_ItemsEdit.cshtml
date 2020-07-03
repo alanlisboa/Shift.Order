@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Shift.Application.ViewModels.OrdemServicoExameViewModel>
+
+@{
+    Layout = null;
+    var id = ViewContext.RouteData.Values["Id"];
+}
+
+<h4 class="mt-4">Exames</h4>
+
+<p class="mt-2 mb-2 float-right">
+    <a asp-controller="ordem-item" asp-action="create" asp-route-id="@id" class="btn btn-secondary">Adicionar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Exame)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-controller="ordem-item" asp-action="Edit" asp-route-id="@item.Id" class="btn">
+                            @Html.DisplayFor(modelItem => item.Exame.Descricao)
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-controller="ordem-item" asp-action="Edit" asp-route-id="@item.Id" class="btn">
+                            @Html.DisplayFor(modelItem => item.Valor)
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-controller="ordem-item" asp-action="Edit" asp-route-id="@item.Id" class="btn"><i class="lnr lnr-pencil"></i></a> |
+                        <a asp-controller="ordem-item" asp-action="Delete" asp-route-id="@item.Id" class="btn"><i class="lnr lnr-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        }
+
+    </tbody>
+</table>

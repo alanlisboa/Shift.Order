@@ -1,0 +1,58 @@
+﻿@model Shift.Application.ViewModels.OrdemServicoViewModel
+
+@{
+    ViewData["Title"] = "Ordem de Serviços";
+}
+
+<h1>Ordem de Serviços</h1>
+
+<hr />
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Numero)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Numero)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.DataOrdem)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.DataOrdem)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Paciente)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Paciente.Nome)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Convenio)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Convenio.Nome)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.PostoColeta)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.PostoColeta.Descricao)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Medico)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Medico.Nome)
+    </dd>
+</dl>
+
+<partial name="_ItemsDetails.cshtml" model="Model.Exames" />
+
+<div class="row mt-4">
+    <div class="col-md-8">
+        <div class="form-group">
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+            <a asp-action="Index" class="btn btn-light ml-2">Voltar</a>
+        </div>
+    </div>
+</div>

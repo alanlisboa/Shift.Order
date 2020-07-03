@@ -1,0 +1,62 @@
+﻿@model Shift.Application.ViewModels.OrdemServicoViewModel
+
+@{
+    ViewData["Title"] = "Apagar Ordem de Serviços";
+}
+
+<h1>Ordem de Serviços</h1>
+
+<h3 class="mt-3">Você tem certeza que deseja apagar?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataOrdem)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataOrdem)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Paciente)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Paciente.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Convenio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Convenio.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PostoColeta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PostoColeta.Descricao)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Medico)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Medico.Nome)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <input type="submit" value="Apagar" class="btn btn-danger" />
+                    <a asp-action="Index" class="btn btn-light ml-2">Voltar</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

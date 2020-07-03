@@ -1,0 +1,33 @@
+﻿@model Shift.Application.ViewModels.OrdemServicoExameViewModel
+
+@{
+    ViewData["Title"] = "Exame";
+}
+
+<h1>Exame</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Exame)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Exame.Descricao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+    </dl>
+</div>
+<div class="row mt-4">
+    <div class="col-md-8">
+        <div class="form-group">
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+            <a asp-controller="ordem" asp-action="details" asp-route-id="@Model.OrdemServico.Id" class="btn btn-light ml-2">Voltar</a>
+        </div>
+    </div>
+</div>

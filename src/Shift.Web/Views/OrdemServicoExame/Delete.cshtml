@@ -1,0 +1,44 @@
+﻿@model Shift.Application.ViewModels.OrdemServicoExameViewModel
+
+@{
+    ViewData["Title"] = "Apagar exame";
+}
+
+<h1>Exame</h1>
+
+<h3 class="mt-3">Você tem certeza que deseja apagar?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OrdemServico)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OrdemServico.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Exame)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Exame.Descricao)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <input type="submit" value="Apagar" class="btn btn-danger" />
+                    <a asp-controller="ordem" asp-action="edit" asp-route-id="@Model.OrdemServico.Id" class="btn btn-light ml-2">Voltar</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
